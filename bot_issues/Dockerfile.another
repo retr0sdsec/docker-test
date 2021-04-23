@@ -1,0 +1,12 @@
+FROM python
+
+RUN pip3 install telebot \
+	&& pip3 install pyTelegramBotAPI
+
+VOLUME /home/docker/bot_issues/
+
+WORKDIR /home/docker/bot_issues/
+
+COPY ./ /home/docker/bot_issues/
+
+CMD python3 bot_test.py 
